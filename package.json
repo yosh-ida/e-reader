@@ -165,6 +165,7 @@
   },
   "devDependencies": {
     "@types/react-swipeable-views": "^0.13.1",
+    "@types/react-swipeable-views-utils": "^0.13.3",
     "@types/wicg-file-system-access": "^2020.9.5"
   }
 }
