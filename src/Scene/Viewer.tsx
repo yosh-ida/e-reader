@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import SwipeableViews from 'react-swipeable-views';
 import BookContent from '../Parser/BookContent';
 import ParseCBZ from '../Parser/CBZ';
 
@@ -25,7 +26,7 @@ function ViewerScene() {
                 setContent(cbz);
                 setPage(0);
             })();
-        });
+        }, []);
 
     useEffect(
         () => {
@@ -55,13 +56,11 @@ function ViewerScene() {
 
     return (
         <div style={{ width: "100vw", height: "100vh" }}>
-
-            {/* <NavigationDrawer nav="VIEWER" anchor="left" /> */}
+            {/* <SwipeableViews enableMouseEvents> */}
             <div style={{ textAlign: "center", width: "100%", height: "100%" }}>
-                {img ? <img src={img} alt={page.toString()} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
+                {img ? <img src={img} alt={"p" + page} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
             </div>
-            {/* <button onClick={() => jumpPage(page - 1)}>＜</button>
-            <button onClick={() => jumpPage(page + 1)}>＞</button> */}
+            {/* </SwipeableViews> */}
         </div>
     );
 }
