@@ -2,7 +2,7 @@
   "name": "e-reader",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://yosh-ida.github.io/e-reader",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@material-ui/core": "^4.12.3",
