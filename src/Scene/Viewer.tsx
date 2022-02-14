@@ -5,7 +5,7 @@ import BookContent from '../Parser/BookContent';
 import ParseCBZ from '../Parser/CBZ';
 
 interface ViewerLocationParam {
-    state: FileSystemFileHandle | null
+    state: FileSystemFileHandle | File | null
 }
 
 function ViewerScene() {
@@ -21,7 +21,7 @@ function ViewerScene() {
             if (!state)
                 return;
             (async () => {
-                const file = await state.getFile();
+                const file = state instanceof File ? state as File : await (state as FileSystemFileHandle).getFile();
                 const cbz = await ParseCBZ(file);
                 setContent(cbz);
                 setPage(0);
@@ -56,11 +56,11 @@ function ViewerScene() {
 
     return (
         <div style={{ width: "100vw", height: "100vh" }}>
-            {/* <SwipeableViews enableMouseEvents> */}
-            <div style={{ textAlign: "center", width: "100%", height: "100%" }}>
-                {img ? <img src={img} alt={"p" + page} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
-            </div>
-            {/* </SwipeableViews> */}
+            <SwipeableViews enableMouseEvents>
+                <div style={{ textAlign: "center", width: "100%", height: "100%" }}>
+                    {img ? <img src={img} alt={"p" + page} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
+                </div>
+            </SwipeableViews>
         </div>
     );
 }

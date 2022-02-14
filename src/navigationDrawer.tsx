@@ -152,7 +152,7 @@ export function NavigationDrawer(props: NavigationProps) {
                             <ListItemText primary={NavigationPage.SHELF} />
                         </ListItem>
                     </ MuiLink>
-                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/viewer"}>
+                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/select"}>
                         <ListItem button key={NavigationPage.VIEWER} onClick={() => { }} disabled={props.nav === NavigationPage.VIEWER}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.VIEWER} />

@@ -5,6 +5,7 @@ import BookShelfScene from './Scene/BookShelf';
 import ViewerScene from './Scene/Viewer';
 import SettingsScene from './Scene/Settings';
 import NotFoundScene from './Scene/NotFound';
+import RedirectViewerScene from './Scene/RedirectViewer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<BookShelfScene />} />
         <Route path="/settings" element={<SettingsScene />} />
         <Route path="/viewer" element={<ViewerScene />} />
+        <Route path="/select" element={<RedirectViewerScene />} />
         <Route path="*" element={<NotFoundScene />} />
       </Routes>
     </BrowserRouter>
