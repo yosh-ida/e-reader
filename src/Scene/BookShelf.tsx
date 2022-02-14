@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { NavigationDrawer } from '../navigationDrawer';
 
 function BookShelfScene() {
-    const [dir, setDir] = useState<FileSystemDirectoryHandle | null>(null);
+    // const [dir, setDir] = useState<FileSystemDirectoryHandle | null>(null);
     const navigate = useNavigate();
-    const dirpicker = async () => {
-        const tdir = await window.showDirectoryPicker();
-        setDir(tdir);
-        navigate('/viewer', { state: { file: tdir } });
-    }
+    // const dirpicker = async () => {
+    //     const tdir = await window.showDirectoryPicker();
+    //     setDir(tdir);
+    //     navigate('/viewer', { state: { file: tdir } });
+    // };
     const filepicker = async () => {
         const tdir = await window.showOpenFilePicker();
         navigate('/viewer', { state: tdir[0] });
@@ -17,7 +17,7 @@ function BookShelfScene() {
         // const reader = new FileReader();
         // reader.onload = () => { navigate('/viewer', { state: { file: reader.result as string } }); };
         // reader.readAsDataURL(file);
-    }
+    };
     return (
         <div>
             <NavigationDrawer nav="SHELF" anchor="left" />

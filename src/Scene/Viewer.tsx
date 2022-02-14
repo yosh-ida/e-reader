@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import BookContent from '../Parser/BookContent';
 import ParseCBZ from '../Parser/CBZ';
 
@@ -11,7 +11,7 @@ function ViewerScene() {
     //  state == null => redirect 404 ?
     const { state } = useLocation() as ViewerLocationParam;
     const [content, setContent] = useState<BookContent | null>(null);
-    const [page, setPage] = useState<number>(1);
+    const [page, setPage] = useState<number>(0);
     const [img, setImg] = useState<string | null>(null);
 
     // console.log(state);
@@ -25,8 +25,7 @@ function ViewerScene() {
                 setContent(cbz);
                 setPage(0);
             })();
-        }, []
-    );
+        });
 
     useEffect(
         () => {
@@ -59,7 +58,7 @@ function ViewerScene() {
 
             {/* <NavigationDrawer nav="VIEWER" anchor="left" /> */}
             <div style={{ textAlign: "center", width: "100%", height: "100%" }}>
-                {img ? <img src={img} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
+                {img ? <img src={img} alt={page.toString()} style={{ userSelect: "none", objectFit: "scale-down", width: "auto", height: "auto", maxHeight: "100%", maxWidth: "100%" }} /> : <div />}
             </div>
             {/* <button onClick={() => jumpPage(page - 1)}>＜</button>
             <button onClick={() => jumpPage(page + 1)}>＞</button> */}

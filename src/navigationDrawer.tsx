@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const NavigationPages = {
+const NavigationPage = {
     SHELF: 'SHELF',
     SETTINGS: 'SETTINGS',
     VIEWER: 'VIEWER',
@@ -90,7 +90,7 @@ interface NavigationProps {
     anchor: "bottom" | "left" | "right" | "top"
 }
 
-export type NavigationPages = typeof NavigationPages[keyof typeof NavigationPages];
+export type NavigationPages = typeof NavigationPage[keyof typeof NavigationPage];
 
 export function NavigationDrawer(props: NavigationProps) {
     const classes = useStyles();
@@ -147,24 +147,24 @@ export function NavigationDrawer(props: NavigationProps) {
                 <Divider />
                 <List>
                     <MuiLink href="./">
-                        <ListItem button key={NavigationPages.SHELF} onClick={() => { }} disabled={props.nav === NavigationPages.SHELF}>
+                        <ListItem button key={NavigationPage.SHELF} onClick={() => { }} disabled={props.nav === NavigationPage.SHELF}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
-                            <ListItemText primary={NavigationPages.SHELF} />
+                            <ListItemText primary={NavigationPage.SHELF} />
                         </ListItem>
                     </ MuiLink>
                     <MuiLink href="./viewer">
-                        <ListItem button key={NavigationPages.VIEWER} onClick={() => { }} disabled={props.nav === NavigationPages.VIEWER}>
+                        <ListItem button key={NavigationPage.VIEWER} onClick={() => { }} disabled={props.nav === NavigationPage.VIEWER}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
-                            <ListItemText primary={NavigationPages.VIEWER} />
+                            <ListItemText primary={NavigationPage.VIEWER} />
                         </ListItem>
                     </MuiLink>
                 </List>
                 <Divider />
                 <List>
                     <MuiLink href="./settings" >
-                        <ListItem button key={NavigationPages.SETTINGS} onClick={() => { }} disabled={props.nav === NavigationPages.SETTINGS}>
+                        <ListItem button key={NavigationPage.SETTINGS} onClick={() => { }} disabled={props.nav === NavigationPage.SETTINGS}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
-                            <ListItemText primary={NavigationPages.SETTINGS} />
+                            <ListItemText primary={NavigationPage.SETTINGS} />
                         </ListItem>
                     </ MuiLink>
                 </List>
