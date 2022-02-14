@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "e-reader/static/css/main.css",
-    "main.js": "e-reader/static/js/main.js",
-    "static/js/922.chunk.js": "e-reader/static/js/922.chunk.js",
-    "service-worker.js": "e-reader/service-worker.js",
-    "index.html": "e-reader/index.html"
+    "main.css": "./static/css/main.css",
+    "main.js": "./static/js/main.js",
+    "static/js/922.chunk.js": "./static/js/922.chunk.js",
+    "service-worker.js": "./service-worker.js",
+    "index.html": "./index.html"
   },
   "entrypoints": [
     "static/css/main.css",
