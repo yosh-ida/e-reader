@@ -4,7 +4,6 @@
     "main.js": "./static/js/main.js",
     "static/js/922.chunk.js": "./static/js/922.chunk.js",
     "service-worker.js": "./service-worker.js",
-    "static/media/logo.svg": "./static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "./index.html"
   },
   "entrypoints": [

@@ -1,25 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BookShelfScene from './Scene/BookShelf';
+import ViewerScene from './Scene/Viewer';
+import SettingsScene from './Scene/Settings';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BookShelfScene />} />
+        <Route path="/settings" element={<SettingsScene />} />
+        <Route path="/viewer" element={<ViewerScene />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
