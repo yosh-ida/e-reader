@@ -146,13 +146,13 @@ export function NavigationDrawer(props: NavigationProps) {
                 </div>
                 <Divider />
                 <List>
-                    <MuiLink href="./">
+                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/"}>
                         <ListItem button key={NavigationPage.SHELF} onClick={() => { }} disabled={props.nav === NavigationPage.SHELF}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.SHELF} />
                         </ListItem>
                     </ MuiLink>
-                    <MuiLink href="./viewer">
+                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/viewer"}>
                         <ListItem button key={NavigationPage.VIEWER} onClick={() => { }} disabled={props.nav === NavigationPage.VIEWER}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.VIEWER} />
@@ -161,7 +161,7 @@ export function NavigationDrawer(props: NavigationProps) {
                 </List>
                 <Divider />
                 <List>
-                    <MuiLink href="./settings" >
+                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/settings"} >
                         <ListItem button key={NavigationPage.SETTINGS} onClick={() => { }} disabled={props.nav === NavigationPage.SETTINGS}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.SETTINGS} />
