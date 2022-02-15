@@ -146,13 +146,15 @@ export function NavigationDrawer(props: NavigationProps) {
                 </div>
                 <Divider />
                 <List>
-                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/"}>
+                    {/* <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/"}> */}
+                    <MuiLink href={"/e-reader" + "/"}>
                         <ListItem button key={NavigationPage.SHELF} onClick={() => { }} disabled={props.nav === NavigationPage.SHELF}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.SHELF} />
                         </ListItem>
                     </ MuiLink>
-                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/select"}>
+                    {/* <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/select"}> */}
+                    <MuiLink href={"/e-reader" + "/select"}>
                         <ListItem button key={NavigationPage.VIEWER} onClick={() => { }} disabled={props.nav === NavigationPage.VIEWER}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.VIEWER} />
@@ -161,7 +163,8 @@ export function NavigationDrawer(props: NavigationProps) {
                 </List>
                 <Divider />
                 <List>
-                    <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/settings"} >
+                    {/* <MuiLink href={(process.env.NODE_ENV === 'production' ? "" : "/e-reader") + "/settings"} > */}
+                    <MuiLink href={"/e-reader" + "/settings"} >
                         <ListItem button key={NavigationPage.SETTINGS} onClick={() => { }} disabled={props.nav === NavigationPage.SETTINGS}>
                             <ListItemIcon>{<InboxIcon />}</ListItemIcon>
                             <ListItemText primary={NavigationPage.SETTINGS} />
